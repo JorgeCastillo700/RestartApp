@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct OnBoardingView: View {
+    
+    let versionString: String = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
     // MARK: PROPERTY
     @AppStorage("onboarding") var isOnboardingViewActive: Bool = true
     
@@ -31,6 +33,8 @@ struct OnBoardingView: View {
                 // MARK: HEADER
                 
                 Spacer()
+                
+                Text("App Version \(versionString)")
                 
                 VStack(spacing: 0) {
                     Text(textTile)
