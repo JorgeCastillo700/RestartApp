@@ -9,3 +9,7 @@ then
     curl -O https://mobilecentersdkdev.blob.core.windows.net/sdk/AppCenter-SDK-Apple.zip
     unzip -o AppCenter-SDK-Apple.zip
 fi
+
+VERSION_CODE=$((VERSION_CODE_SHIFT + APPCENTER_BUILD_ID))
+plutil -replace CFBundleVersion -string "$VERSION_CODE"
+$APPCENTER_SOURCE_DIRECTORY/Restart/Info.plist
